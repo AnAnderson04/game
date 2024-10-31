@@ -1,15 +1,38 @@
 package World;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
+
 public class Game {
-	static ArrayList<Item> inventory = new ArrayList<Item>();
+	public static ArrayList<Item> inventory = new ArrayList<Item>();
+	static Room currentRoom;
+
 	public static void main(String[] args) {
 		runGame();
 	}
+
+	public static void print(Object obj) {
+		System.out.println(obj.toString());
+	}
+
+	public static Room getRoom() {
+		return currentRoom;
+	}
+
+	public static Item getItem(String n) {
+		for (int i2 = 0; i2 < inventory.size(); i2++) {
+			Item ite = inventory.get(i2);
+			if (n.equals(ite.getname())) {
+				return ite;
+			}
+		}
+		return null;
+	}
+
 	public static void runGame() {
-		Room currentRoom = World.buildWorld();
+		currentRoom = World.buildWorld();
 		Scanner input = new Scanner(System.in);
 
 		String command;
@@ -57,6 +80,34 @@ public class Game {
 				System.out.println("You are carrying: ");
 				for (Item it : inventory)
 					System.out.println(it);
+				break;
+			case "use": //WORK ON THIS// 
+				Item i3 = currentRoom.getItem(words[1]);
+				if (i3 == null) {
+					for (int i2 = 0; i2 < inventory.size(); i2++) {
+						Item ite = inventory.get(i2);
+						if (words[1].equals(ite.getname())) {
+							ite.use();
+						}
+					}
+					System.out.println("There is nothing you can use.");
+				} else {
+					i3.use();
+				}
+				break;
+			case "open": //WORK ON THIS// 
+				Item i4 = currentRoom.getItem(words[1]);
+				if (i4 == null) {
+					for (int i2 = 0; i2 < inventory.size(); i2++) {
+						Item ite = inventory.get(i2);
+						if (words[1].equals(ite.getname())) {
+							ite.open();
+						}
+					}
+					System.out.println("There is nothing you can open.");
+				} else {
+					i4.open();	
+				}
 				break;
 			default:
 				System.out.println("I don't know what that means.");

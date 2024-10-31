@@ -13,6 +13,7 @@ public class World {
 		bedroom.addExit('w', bathroom);
 		bathroom.addExit('e', bedroom);
 		hallway.addExit('u', attic);
+		hallway.addExit('d', livingroom);
 		attic.addExit('d', hallway);
 		livingroom.addExit('n', hallway);
 		livingroom.addExit('w', kitchen);
@@ -28,6 +29,10 @@ public class World {
 		bedroom.setItem(book);
 		Item flashlight = new Item("This is a flashlight.", "flashlight");
 		bedroom.setItem(flashlight);
+		Combination combination = new Combination("This is a combination.", "combination");
+		hallway.setItem(combination);
+		Safe safe = new Safe("It's an impressive safe!", "safe");
+		attic.setItem(safe);
 		
 		return bedroom;
 	}

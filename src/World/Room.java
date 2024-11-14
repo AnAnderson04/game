@@ -10,10 +10,13 @@ public class Room {
 	private Room south;
 	private Room up;
 	private Room down;
+	private String name;
+	private boolean lock = false;
 	private HashMap<String, Item> in = new HashMap<String, Item>();
 	
-	public Room(String desc) {
+	public Room(String desc, String n) {
 		description = desc;
+		name = n;
 	}
 
 	public void addExit(char dir, Room r) {
@@ -62,5 +65,23 @@ public class Room {
 	
 	public void removeItem(String name) {
 		in.remove(name);
+	}
+	
+	public boolean lock() {
+		return false;
+		
+	}
+	public boolean getlock() {
+		return lock;
+		
+	}
+	public void setlock(boolean l) {
+		lock = l;
+	}
+	public String getName () {
+		return name;
+	}
+	public void setName(String n) {
+		name = n;
 	}
 }

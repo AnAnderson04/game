@@ -48,7 +48,11 @@ public class Game {
 			case "w":
 			case "u":
 			case "d":
-				currentRoom = currentRoom.getExit(command.charAt(0));
+				if(currentRoom.getExit(command.charAt(0)).getlock() ) //Work on this
+					Game.print("This room is locked.");
+				else
+					currentRoom = currentRoom.getExit(command.charAt(0));
+					
 				break;
 			case "x":
 				System.out.println("Thanks for walking through my game!");
@@ -81,7 +85,7 @@ public class Game {
 				for (Item it : inventory)
 					System.out.println(it);
 				break;
-			case "use": //WORK ON THIS// 
+			case "use": 
 				Item i3 = currentRoom.getItem(words[1]);
 				if (i3 == null) {
 					for (int i2 = 0; i2 < inventory.size(); i2++) {
@@ -95,7 +99,7 @@ public class Game {
 					i3.use();
 				}
 				break;
-			case "open": //WORK ON THIS// 
+			case "open":  
 				Item i4 = currentRoom.getItem(words[1]);
 				if (i4 == null) {
 					for (int i2 = 0; i2 < inventory.size(); i2++) {

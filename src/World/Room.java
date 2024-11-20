@@ -1,8 +1,9 @@
 package World;
 
+import java.io.*;
 import java.util.HashMap;
 
-public class Room {
+public class Room implements Serializable{
 	private String description;
 	private Room east;
 	private Room west;
@@ -17,6 +18,7 @@ public class Room {
 	public Room(String desc, String n) {
 		description = desc;
 		name = n;
+		Game.Rooms.put(desc, this);
 	}
 
 	public void addExit(char dir, Room r) {

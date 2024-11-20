@@ -1,6 +1,8 @@
 package World;
 
-public class Item {
+import java.io.*;
+
+public class Item implements Serializable{
 	private String description;
 	private String name;
 	

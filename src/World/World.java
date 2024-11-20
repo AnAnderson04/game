@@ -26,7 +26,7 @@ public class World {
 		Item sandwich = new Item("This is a sandwich.", "sandwich");
 		kitchen.setItem(sandwich);
 		Item mirror = new Item("This is a mirror.", "mirror");
-		bedroom.setItem(mirror);
+		bathroom.setItem(mirror);
 		Item book = new Item("This is a book.", "book");
 		bedroom.setItem(book);
 		Item flashlight = new Item("This is a flashlight.", "flashlight");

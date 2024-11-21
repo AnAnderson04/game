@@ -10,6 +10,7 @@ public class Game {
 	public static ArrayList<Item> inventory = new ArrayList<Item>();
 	public static HashMap<String, Room> Rooms = new HashMap<String, Room>();// just added, keys are names of Rooms
 	static Room currentRoom;
+	static Scanner user_input = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		runGame();
@@ -172,6 +173,10 @@ public class Game {
 				break;
 			case "load":
 				loadGame("Load");
+				break;
+			case "talk":
+				NPC n = currentRoom.getNPC(words[1]);
+				n.talk();
 				break;
 			default:
 				System.out.println("I don't know what that means.");

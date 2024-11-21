@@ -47,6 +47,14 @@ public class World {
 		//locking a room
 		bathroom.setlock(true);
 		
+		//adding puppy NPC to class
+		Puppy puppy = new Puppy();
+		livingroom.setNPC(puppy);
+		
+		//adding own NPC to class
+		Mom Mom = new Mom();
+		kitchen.setNPC(Mom);
+		
 		return bedroom;
 	}
 }

@@ -14,6 +14,8 @@ public class Room implements Serializable{
 	private String name;
 	private boolean lock = false;
 	private HashMap<String, Item> in = new HashMap<String, Item>();
+	private HashMap<String, NPC> npc = new HashMap<String, NPC>();
+
 	
 	public Room(String desc, String n) {
 		description = desc;
@@ -85,5 +87,12 @@ public class Room implements Serializable{
 	}
 	public void setName(String n) {
 		name = n;
+	}
+	public NPC getNPC(String name) {
+		return npc.get(name);
+	}
+
+	public void setNPC(NPC np) {
+		npc.put(np.getName(), np);
 	}
 }

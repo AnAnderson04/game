@@ -21,6 +21,8 @@ public class Game {
 			FileOutputStream fos = new FileOutputStream(f);
 			ObjectOutputStream stream = new ObjectOutputStream(fos);
 			stream.writeObject(Rooms);
+			stream.writeObject(inventory);
+			stream.writeObject(currentRoom);
 			stream.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File " +filename+ " not found.");
@@ -36,6 +38,8 @@ public class Game {
 			FileInputStream fos = new FileInputStream(f);
 			ObjectInputStream stream = new ObjectInputStream(fos);
 			Rooms = (HashMap) stream.readObject();
+			currentRoom = (Room) stream.readObject();   
+            inventory = (ArrayList<Item>)stream.readObject(); 
 			stream.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File " +fileName+ " not found.");

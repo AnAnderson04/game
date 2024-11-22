@@ -40,16 +40,18 @@ public class Puppy extends NPC {
 			}
 		}
 		// make it advance to the next conversation...
-		else if (i == 2) {
+		if (i == 2) {
 			switch (option) {
 			case 1:
 				say("Yay! Fetch!");
 				Game.print("The puppy runs off and returns with a ball. The player receives the ball.");
+				break;
 			case 2:
 				say("Yip!");
 				Game.print("The dog simply wags his tail.");
 				break;
 			}
 		}
+		i++;
 	}
 }

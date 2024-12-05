@@ -13,7 +13,7 @@ public class Canvas extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		String s = TextF.getText();
 		System.out.println(s);
-		Game.processCommand(s); //possible error?
+		Game.processCommand(s); 
 	}
 
 	private JButton button;

@@ -6,7 +6,6 @@ public class Mom extends NPC {
 	public Mom() {
 		super("Mom", "Your mom is sitting and reading a book...");
 	}
-
 	@Override
 	public void talk() { 
 		if (i == 1) {

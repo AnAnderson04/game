@@ -20,7 +20,7 @@ public class NPC {
 			Game.print("You can't talk to "+name+".");
 			}
 		public void response(int option) {
-		// This method intentionally left blank.
+		// intentionally left blank.
 			}
 		public void getResponse(String[] options) {
 			for(int i=0; i<options.length; i++) {

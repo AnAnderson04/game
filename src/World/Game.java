@@ -56,7 +56,7 @@ public class Game {
 	}
 	
 	public static void print(Object obj) {
-		c.TextA.append(obj.toString() + "\n"); //fix this
+		c.TextA.append(obj.toString() + "\n"); 
 	}
 
 	public static Room getRoom() {

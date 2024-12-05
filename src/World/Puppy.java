@@ -39,7 +39,6 @@ public class Puppy extends NPC {
 				break;
 			}
 		}
-		// make it advance to the next conversation...
 		if (i == 2) {
 			switch (option) {
 			case 1:

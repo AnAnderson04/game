@@ -8,7 +8,7 @@ public class Mom extends NPC {
 	}
 
 	@Override
-	public void talk() { // edit to make it the same as the puppy class
+	public void talk() { 
 		if (i == 1) {
 			say("Mom seems to be reading her favorite book.");
 			String[] options = { "Morning, Mom.", // 0
@@ -28,7 +28,7 @@ public class Mom extends NPC {
 	}
 
 	@Override
-	//fix responses
+
 	public void response(int option) {
 		if(i == 1) {
 			switch (option) {

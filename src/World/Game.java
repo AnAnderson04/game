@@ -35,7 +35,7 @@ public class Game {
 			Game.print("Bummers, man.");
 		}
 	}
-
+	
 	public static void loadGame(String fileName) {
 		File f = new File(fileName);
 		try {
